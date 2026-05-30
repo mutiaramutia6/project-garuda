@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Garuda: Operasi Nusantara</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="operation-panel">
+        <div class="status-card">
+          <div class="label">Misi Aktif</div>
+          <h2 id="missionName">Data Hilang</h2>
+          <p id="missionText">Masuk ke kantor pemerintah dan curi data rahasia.</p>
+          <div id="objectiveText" class="objective">Objective: cari terminal hijau.</div>
+        </div>
+
+        <div class="meters">
+          <div>
+            <span>Reputasi Rakyat</span>
+            <strong id="repValue">50</strong>
+          </div>
+          <div>
+            <span>Bukti Korupsi</span>
+            <strong id="evidenceValue">0/12</strong>
+          </div>
+          <div>
+            <span>Intel NARA</span>
+            <strong id="intelValue">1</strong>
+          </div>
+          <div>
+            <span>Mode</span>
+            <strong id="modeValue">Jalan</strong>
+          </div>
+        </div>
+
+        <div class="inventory">
+          <h3>Arsip Bukti</h3>
+          <ul id="evidenceList"></ul>
+        </div>
+      </aside>
+
+      <section class="play-area">
+        <div class="game-panel" aria-label="Project Garuda game">
+          <canvas id="game" width="1024" height="576"></canvas>
+
+          <div id="startScreen" class="overlay">
+            <div class="brand">PROJECT GARUDA</div>
+            <h1>Operasi Nusantara 2045</h1>
+            <p>Open world stealth tentang ARYA dan NARA membongkar jaringan korupsi THE MINISTER di kota neon internasional. Jadikan Hotel Garuda City pos aman, lindungi warga kota, lawan boss, dan bergerak bersama hapus korupsi di Indonesia.</p>
+            <div class="menu-actions">
+              <button id="startButton" type="button">Mulai Game Baru</button>
+              <button id="continueButton" type="button">Lanjutkan</button>
+              <button id="resetButton" type="button">Reset Save</button>
+            </div>
+          </div>
+
+          <div id="pausePanel" class="overlay hidden">
+            <div class="brand small">PAUSE</div>
+            <p>Data operasi disimpan otomatis. Tekan P untuk lanjut.</p>
+            <div class="menu-actions">
+              <button id="resumeButton" type="button">Lanjut</button>
+              <button id="saveButton" type="button">Simpan</button>
+            </div>
+          </div>
+
+          <div id="hackPanel" class="hack-panel hidden" aria-live="polite">
+            <div>
+              <div class="hack-title" id="hackTitle">Hacking Database</div>
+              <div class="hack-note" id="hackNote">Ketik kode untuk membuka server.</div>
+            </div>
+            <div id="hackPrompt" class="hack-code"></div>
+            <input id="hackInput" type="text" autocomplete="off" spellcheck="false" maxlength="14" aria-label="Masukkan kode hacking">
+            <div class="hack-actions">
+              <button id="hackSubmit" type="button">Buka</button>
+              <button id="hackCancel" type="button">Batal</button>
+            </div>
+          </div>
+
+          <div id="dialogPanel" class="dialog-panel hidden" aria-live="polite">
+            <div id="dialogSpeaker" class="dialog-speaker">NARA</div>
+            <div id="dialogText" class="dialog-text"></div>
+            <button id="dialogNext" type="button">Lanjut</button>
+          </div>
+
+          <div id="choicePanel" class="choice-panel hidden" aria-live="polite">
+            <div id="choiceText" class="choice-text"></div>
+            <div class="choice-actions">
+              <button id="choiceHonest" type="button">Publikasikan Bukti</button>
+              <button id="choiceDark" type="button">Terima Kesepakatan</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <h3>Pelajaran</h3>
+          <p id="lessonText">Korupsi merusak layanan publik, mengalihkan uang rakyat dari sekolah, kesehatan, jalan, dan bantuan sosial, lalu membuat masyarakat kehilangan hak untuk tahu bagaimana keputusan negara dibuat.</p>
+        </div>
+      </section>
+
+      <aside class="guide-panel">
+        <div class="controls">
+          <h3>Kontrol</h3>
+          <p><b>WASD / Panah</b> bergerak</p>
+          <p><b>Shift</b> stealth</p>
+          <p><b>E</b> interaksi / masuk-keluar gedung / bicara / ambil bukti</p>
+          <p><b>H</b> hack terminal</p>
+          <p><b>F</b> tembak pistol laser ke boss</p>
+          <p><b>B</b> briefing ARYA tentang bahaya korupsi</p>
+          <p><b>Q</b> drone mode</p>
+          <p><b>M</b> motor mode</p>
+          <p><b>Space</b> distraksi pakai Intel</p>
+          <p><b>P</b> pause</p>
+        </div>
+
+      </aside>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
